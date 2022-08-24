@@ -115,7 +115,7 @@ const turtle1= new Turtle ({
         y:108
     },
     velocidade: {
-        x:+0.003,
+        x:0.003,
         y:0
     },
     rndNumber: {
@@ -143,7 +143,7 @@ const turtle2= new Turtle ({
     y:156
     },
     velocidade: {
-        x:+0.009,
+        x:0.009,
         y:0
     },
     rndNumber: {

@@ -11,6 +11,7 @@ let round=0;
 let start=0;
 let sono=0;
 let totalApostadoNow=[0,0,0,0,0];
+let betFeitos=[0,0,0,0,0];
 
 let positionLines={
     x:193,
@@ -81,6 +82,7 @@ function somarGold (){
         //console.log(totalApostadoNow[i]);
         if(buttonZero[i].valueAsNumber!==totalApostadoNow[i]) {
             totalApostado+=(buttonZero[i].valueAsNumber-totalApostadoNow[i]);
+            betFeitos[i]=buttonZero[i].valueAsNumber;
             console.log(`papanapapapapa ${totalApostado}`)
             thePlayer.goldPlayer-=totalApostado;
             totalApostadoNow[i]=buttonZero[i].valueAsNumber;
@@ -112,8 +114,8 @@ function animarTartarugas() {
 }
 
 function playerBet (){
-    console.log(thePlayer.goldPlayer);
-    console.log("nomanete");
+    //console.log(thePlayer.goldPlayer);
+    //console.log("nomanete");
     if (endBet) { return }
     window.requestAnimationFrame(playerBet);
     //drawingArena();
@@ -134,23 +136,51 @@ function pararGold (){
     }
 }
 
+function pagarGold() {
+    let buttonOne=document.querySelectorAll("#betsGold button");
+    let oddsFinais=document.querySelectorAll("#odds p");
+    let goldAPagar=0;
+    let winner=vencedora();
+    goldAPagar+=Number(oddsFinais[winner.index].innerText)*betFeitos[winner.index];
+    thePlayer.goldPlayer+=goldAPagar;    
+}
+
+
+function vencedora() {
+    let winner={position: turtle1.position.x, index:0}
+    if (winner.position<turtle2.position.x) {
+        winner.position=turtle2.position.x; 
+        winner.index=1
+        }
+    //if (winner.position<turtle3.position.x) {winner.position=turtle3.position.x; winner.index=2}
+    //if (winner.position<turtle4.position.x) {winner.position=turtle4.position.x; winner.index=3}
+    //if (winner.position<turtle5.potision.x) {winner.position=turtle5.position.x; winner.index=4}
+    return winner;
+}
+
 function continueJogo () {
     //window.requestAnimationFrame(continueJogo);
     console.log(thePlayer.goldPlayer);
     c.fillStyle="black";
     c.fillRect(0, 0, canvas.width, canvas.height);
+    
+    pagarGold();
     setZeroGold();
     updatePlayer();
     updateNameTurtle();
     drawingArena();
+
+    
     turtle1.position.x=194;
     turtle1.conditions.tired=false;
     turtle1.conditions.bestificada=false;
-    turtle1.velocidade.x=0.03;
+    turtle1.velocidade.x=0.003;
     turtle2.position.x=194;
     turtle2.conditions.tired=false;
     turtle2.conditions.bestificada=false;
     totalApostadoNow=[0,0,0,0,0];
+    betFeitos=[0,0,0,0,0];
+
     // turtle1.velocidade.x=0.06;
     // turtle1=new Turtle({
     //     position: {
