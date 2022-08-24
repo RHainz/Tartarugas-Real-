@@ -142,7 +142,7 @@ function pagarGold() {
     let goldAPagar=0;
     let winner=vencedora();
     goldAPagar+=Number(oddsFinais[winner.index].innerText)*betFeitos[winner.index];
-    thePlayer.goldPlayer+=goldAPagar;    
+    thePlayer.goldPlayer+=Math.ceil(goldAPagar);
 }
 
 
@@ -158,6 +158,14 @@ function vencedora() {
     return winner;
 }
 
+function endGame() {
+    if (thePlayer.goldPlayer>=10000){
+    c.fillStyle="yellow"
+    c.fillRect(1,1,canvas.width,canvas.height);}
+    return 
+}
+
+
 function continueJogo () {
     //window.requestAnimationFrame(continueJogo);
     console.log(thePlayer.goldPlayer);
@@ -169,7 +177,7 @@ function continueJogo () {
     updatePlayer();
     updateNameTurtle();
     drawingArena();
-
+    endGame();
     
     turtle1.position.x=194;
     turtle1.conditions.tired=false;

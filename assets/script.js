@@ -166,7 +166,7 @@ const turtle2= new Turtle ({
 function randomizer(tipo) {
     if (tipo=="res") {return ((Math.random()*100000+1))}
     else {
-        return (Math.floor(Math.random()*100+1)/200*10)
+        return (Math.floor(Math.random()*100+1)/200*30)
     };
 }
 
