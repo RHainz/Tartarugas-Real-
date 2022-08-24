@@ -1,0 +1,112 @@
+#container {
+    position: relative;
+    
+}
+
+#starteando {
+    position:absolute;
+    margin-top: 350px;
+    margin-left: 250px;
+}
+
+#starteando2 {
+    position:absolute;
+    margin-top: 350px;
+    margin-left: 250px;
+}
+
+#areaPersonagem {
+    border: 1px solid white;
+    display: flex;
+    position:absolute;
+    margin-top: 500px;
+    margin-left: 25px;
+}
+
+#areaPersonagem p{
+    color: beige;
+    background-color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    width:150px;
+    height:20px;
+    padding:15px 0px;
+    margin:0px;
+    border: 1px solid yellow;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#namerugas {
+    border: 1px solid white;
+    display: flex;
+    position:absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-left: 10px;
+    width: 90px;
+    height: 240px;
+    
+}
+
+#namerugas p{
+    background-color: aliceblue;
+    text-align: center;
+}
+
+#inputsGold {
+    border: 1px solid white;
+    display: flex;
+    position:absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 80px;
+    height: 240px;
+}
+
+#inputsGold input{
+    width:50px;
+    
+}
+
+#betsGold {
+    border: 1px solid white;
+    display: flex;
+    position:absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 80px;
+    height: 240px;
+}
+
+#betsGold button{
+    width:50px;
+    border:hidden;
+}
+
+#odds {
+    border: 1px solid white;
+    display: flex;
+    position:absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-left:900px;
+    width: 30px;
+    height: 240px;
+    
+}
+
+#odds p{
+    background-color: aliceblue;
+    text-align: center;
+}
