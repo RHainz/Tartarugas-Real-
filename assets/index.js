@@ -14,6 +14,7 @@ let sono=0;
 let totalApostadoNow=[0,0,0,0,0];
 let betFeitos=[0,0,0,0,0];
 let gameAnimate=[0,0];
+let volta=false;
 
 let positionLines={
     x:193,
@@ -53,6 +54,7 @@ function setZeroGold () {
     for (let i=0; i<5; i++){
         buttonOne[i].hidden=true;
     }
+    return
 }
 
 function updatePlayer() {
@@ -107,31 +109,30 @@ function totalDasApostas() {
 }
 
 function animarTartarugas() {
-    setInterval(window.requestAnimationFrame(animarTartarugas),16);
+    window.requestAnimationFrame(animarTartarugas);
     c.fillStyle="black";
+    //playerBet(endBet);
     //c.fillRect(0,0,canvas.width,canvas.height);
     //attBackgroud("./images/Sandy.png", 161, 68);
+    if (endBet===false){playerBet();}else if(endBet===true){
     drawingArena();
     updatePlayer();
-    //console.log(totalDasApostas());
-//    backGround.update();
     turtle1.update();
     turtle2.update();
     turtle3.update();
     turtle4.update();
-    turtle5.update();
-    //turtle3.update();
+    turtle5.update();   
+    }
+    if (stop) {continueJogo();}
+
 }
 
 function playerBet (){
-    //console.log(thePlayer.goldPlayer);
-    //console.log("nomanete");
-    if (endBet) { return }
-        window.requestAnimationFrame(playerBet);
-        
-    //drawingArena();
     updatePlayer();
     somarGold();
+    if(endBet) {return pararGold()}
+    //drawingArena();
+    
 }
 
 function pararGold (){
@@ -145,6 +146,7 @@ function pararGold (){
         buttonOne[i].hidden=false;
         buttonOne[i].textContent=buttonZero[i].value;
     }
+    return
 }
 
 function pagarGold() {
@@ -178,16 +180,17 @@ function endGame() {
 
 
 function continueJogo () {
+    volta=true;
     console.log(thePlayer.goldPlayer);
     c.fillStyle="black";
     c.fillRect(0, 0, canvas.width, canvas.height);
     console.log(turtle1.round);
     console.log(turtle2.round);
+    drawingArena();
     pagarGold();
     setZeroGold();
     updatePlayer();
     updateNameTurtle();
-    drawingArena();
     endGame();
     //attBackgroud("./images/eg-desert.png",0 ,0);
     
@@ -211,6 +214,7 @@ function continueJogo () {
     turtle5.position.x=194;
     turtle5.conditions.tired=false;
     turtle5.conditions.bestificada=false;
+    
 
     totalApostadoNow=[0,0,0,0,0];
     betFeitos=[0,0,0,0,0];
@@ -220,25 +224,24 @@ function continueJogo () {
     console.log(turtle2);
     console.log(thePlayer.goldPlayer);
     turtle1.round=0;
-    return playerBet();
+    return
 }
 
 //backGround.update();
 setZeroGold();
 updateNameTurtle();
 drawingArena();
-playerBet();
-//animarTartarugas();
+animarTartarugas();
 
-const inputNotString = document.getElementsByClassName("notastring");
-for (i=0; i<inputNotString.length; i++) {
-    inputNotString[i].addEventListener("keydown", (event)=> {
-        const regex=new RegExp(/^[0-9]*$/gm);
-        if (regex.test(event.target.value)){
-            event.preventDefault;            
-        }
-    })
-}
+// const inputNotString = document.getElementsByClassName("notastring");
+// for (i=0; i<inputNotString.length; i++) {
+//     inputNotString[i].addEventListener("keydown", (event)=> {
+//         const regex=new RegExp(/^[0-9]*$/gm);
+//         if (regex.test(event.target.value)){
+//             event.preventDefault;            
+//         }
+//     })
+// }
 
 starteando2.hidden=true;
 
@@ -247,8 +250,7 @@ starteando.addEventListener("click",()=>{
     starteando.disabled=true;
     endBet=true;
     stop=false;
-    pararGold();
-    animarTartarugas()});
+    });
 
 starteando2.addEventListener("click",()=>{
         starteando2.hidden=true;
@@ -256,8 +258,7 @@ starteando2.addEventListener("click",()=>{
         starteando.disabled=false;
         endBet=false;
         starteando.hidden=false;
-        continueJogo();
-});
+        });
 
 // setZeroGold();
 // updateNameTurtle();
