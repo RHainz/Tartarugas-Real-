@@ -33,15 +33,15 @@ const backGround= new Sprite({
     imgSource: './images/largeturtle.png'
 });
 
-//attBackgroud("./images/eg-desert.png", 0, 0);
-//attBackgroud("./images/Sandy.jpg", 161, 68);
+attBackgroud("./images/Sandy2.png", 0, 0);
+//attBackgroud("./images/Sandy.jpg", 280, 68);
 
 
 c.fillRect(0, 0, canvas.width, canvas.height);
 
-turtle1.draw();
 
-turtle2.draw();
+  
+
 
 function setZeroGold () {
     let buttonZero=document.querySelectorAll("#inputsGold input");
@@ -88,6 +88,7 @@ function somarGold (){
     for (let i=0; i<5; i++){
         //console.log(buttonZero[i].valueAsNumber);
         //console.log(totalApostadoNow[i]);
+        if(typeof thePlayer.goldPlayer.valueAsNumber !=="number"){ thePlayer.goldPlayer.valueAsNumber=1000}
         if(buttonZero[i].valueAsNumber!==totalApostadoNow[i]) {
             totalApostado+=(buttonZero[i].valueAsNumber-totalApostadoNow[i]);
             betFeitos[i]=buttonZero[i].valueAsNumber;
@@ -173,17 +174,18 @@ function vencedora() {
 function endGame() {
     if (thePlayer.goldPlayer>=10000){
     c.fillStyle="yellow"
-    c.fillRect(1,1,canvas.width,canvas.height);}
+    c.fillRect(1,1,canvas.width,canvas.height);
+    thePlayer.goldPlayer=1000;}
     return 
 }
 
 
 function continueJogo () {
-    console.log(thePlayer.goldPlayer);
+    //console.log(thePlayer.goldPlayer);
     c.fillStyle="black";
     c.fillRect(0, 0, canvas.width, canvas.height);
-    console.log(turtle1.round);
-    console.log(turtle2.round);
+    //console.log(turtle1.round);
+    //console.log(turtle2.round);
     pagarGold();
     setZeroGold();
     updatePlayer();
@@ -216,13 +218,19 @@ function continueJogo () {
     totalApostadoNow=[0,0,0,0,0];
     betFeitos=[0,0,0,0,0];
 
-    
-    console.log(turtle1);
-    console.log(turtle2);
     console.log(thePlayer.goldPlayer);
+    if(thePlayer.goldPlayer =="NaN"){ localStorage.removeItem("gold"); thePlayer.goldPlayer=1000}
+
+    //console.log(turtle1);
+    //console.log(turtle2);
+    //console.log(thePlayer.goldPlayer);
     turtle1.round=0;
     localStorage.setItem("gold",`${thePlayer.goldPlayer}`);
-    window.location.reload()
+    
+    //window.location.reload()
+
+    
+
     thePlayer.goldPlayer=Number(localStorage.getItem("gold"));
     return
 }
@@ -231,6 +239,12 @@ function continueJogo () {
 setZeroGold();
 updateNameTurtle();
 drawingArena();
+turtle1.draw();
+turtle2.draw();
+turtle3.draw();
+turtle4.draw();
+turtle5.draw();
+
 playerBet();
 //animarTartarugas();
 

@@ -5,21 +5,25 @@
 
 #starteando {
     position:absolute;
-    margin-top: 350px;
-    margin-left: 250px;
+    margin-top: 400px;
+    margin-left: 125px;
+    width:250px;
+    height:40px;
 }
 
 #starteando2 {
     position:absolute;
-    margin-top: 350px;
-    margin-left: 250px;
+    margin-top: 400px;
+    margin-left: 125px;
+    width:250px;
+    height:40px;
 }
 
 #areaPersonagem {
     border: 1px solid white;
     display: flex;
     position:absolute;
-    margin-top: 500px;
+    margin-top: 475px;
     margin-left: 25px;
 }
 
@@ -100,7 +104,7 @@
     align-items: center;
     justify-content: space-around;
     margin-top: 100px;
-    margin-left:900px;
+    margin-left:950px;
     width: 30px;
     height: 240px;
     

@@ -13,11 +13,13 @@ class Turtle {
 
     draw () {
         const r=0;
-        c.fillStyle="red";
-        c.fillRect(this.position.x, this.position.y, 32, 32);
-        c.fillStyle="white";
-        c.fillText(`${this.position.x}`,this.position.x,this.position.y);
-        for (let i=0; i<1000; i++){let r=0;}
+        //c.fillStyle="red";
+        //c.fillRect(this.position.x, this.position.y, 32, 32);
+        //c.fillStyle="white";
+        //c.fillText(`${this.position.x}`,this.position.x,this.position.y);
+        attBackgroud("./images/tt1gif.gif",this.position.x,this.position.y);
+        //attGif("./images/tt1gif.gif",this.position.x,this.position.y);
+        console.log(this.position.x,this.position.y)
     }
 
     resistenciaTeste () {
@@ -75,40 +77,43 @@ let thePlayer={
 };
 
 
-  
-
 function randomizer(tipo) {
     if (tipo==="res") {return ((Math.random()*100000+1))}
     else {
-        return (Math.floor(Math.random()*100+1)/200*30)
+        return (Math.floor(Math.random()*100+1)/200*5)
     };
 }
 
 function drawingArena () {
-    //attBackgroud("./images/Sandy.jpg",163,68);
-    for (let i=0; i<=4; i++) {
-        const ajuste=i*48;
-        c.fillStyle="yellow";
-        c.fillRect(positionLines.x, positionLines.y+ajuste, pathSize, 48);
-        c.fillStyle="black";
-        c.fillRect(positionLines.x+1, positionLines.y+ajuste+1, pathSize-2, 46);
-    }
+    attBackgroud("./images/Sandy5.gif",0,70);
+    c.beginPath();
+    c.moveTo(840,90);
+    c.lineTo(840,350);
+    c.stroke();
+    //c.fillRect(180,90,710,300);
+    // for (let i=0; i<=4; i++) {
+    //     const ajuste=i*48;
+    //     c.fillStyle="yellow";
+    //     c.fillRect(positionLines.x, positionLines.y+ajuste, pathSize, 48);
+    //     c.fillStyle="black";
+    //     c.fillRect(positionLines.x+1, positionLines.y+ajuste+1, pathSize-2, 46);
+    // }
 
 }
 
-const allturtles=[  {position: {x:194,y:108}, velocidade: {x:0.003,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Rogeruga"}, 
+const allturtles=[  {position: {x:194,y:90}, velocidade: {x:0.003,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Rogeruga"}, 
                     conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99950, foco: 99950}},
 
-                    {position: {x:194,y:156}, velocidade: {x:0.006,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Marcoruga"}, 
+                    {position: {x:194,y:138}, velocidade: {x:0.006,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Marcoruga"}, 
                     conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99960, foco: 99960}},
 
-                    {position: {x:194,y:204}, velocidade: {x:0.009,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Tartar Uga"}, 
+                    {position: {x:194,y:186}, velocidade: {x:0.009,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Tartar Uga"}, 
                     conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99960, foco: 99960}},
                 
-                    {position: {x:194,y:252}, velocidade: {x:0.007,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Saporuga"}, 
+                    {position: {x:194,y:234}, velocidade: {x:0.007,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Saporuga"}, 
                     conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99960, foco: 99960}},
                 
-                    {position: {x:194,y:300}, velocidade: {x:0.010,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Demonhuga"}, 
+                    {position: {x:194,y:282}, velocidade: {x:0.010,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Demonhuga"}, 
                     conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99960, foco: 99960}}]
 
 
