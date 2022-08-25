@@ -1,6 +1,11 @@
+@font-face {
+    font-family: digital;
+    src: url("../fonts/yoster.ttf") format("truetype");
+}
+
 #container {
     position: relative;
-    
+    font-family: digital;
 }
 
 #starteando {
@@ -58,6 +63,7 @@
 #namerugas p{
     background-color: aliceblue;
     text-align: center;
+    font-size: 0.8em;
 }
 
 #inputsGold {
@@ -113,4 +119,63 @@
 #odds p{
     background-color: aliceblue;
     text-align: center;
+}
+
+#windiv {
+    position:relative;
+    display:none;
+}
+
+#win {
+    position: absolute;
+    width:1024px;
+    height:576px;
+
+}
+
+
+#texticulo {
+
+border: 1px solid white;
+    display: flex;
+    position:absolute;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-around;
+    margin-top: 450px;
+    margin-left: 100px;
+    width:900px;
+    height: 120px;
+}
+
+/* #texticulo {
+    display: flex;
+    position:relative;
+    margin: 0px;
+    height: 500px;
+} */
+
+#texticulo .winner {
+    position:relative;
+    text-align: center;
+    width:900px;
+    height: 60px;
+    margin: 5px;
+}
+
+#demonT {
+    position:absolute;
+    margin-top: 275px;
+    /* margin-left: 0px; */
+    scale: 5;
+    animation-duration:120s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-name:crossing;
+}
+
+@keyframes crossing {
+    from { margin-left: 70px; }
+    to   { margin-left: 900px; }
+    
 }

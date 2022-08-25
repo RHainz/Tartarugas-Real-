@@ -19,7 +19,7 @@ class Turtle {
         //c.fillText(`${this.position.x}`,this.position.x,this.position.y);
         attBackgroud("./images/tt1gif.gif",this.position.x,this.position.y);
         //attGif("./images/tt1gif.gif",this.position.x,this.position.y);
-        console.log(this.position.x,this.position.y)
+        //console.log(this.position.x,this.position.y)
     }
 
     resistenciaTeste () {
@@ -72,10 +72,10 @@ class Turtle {
 
 let thePlayer={
     nomeJogador: "The Player",
-    goldPlayer: 1000,
+    goldPlayer: 9500,
     tartarugaAtual: "Sem Tartaruga"    
 };
-
+    //localStorage.setItem("gold",`${thePlayer.goldPlayer}`);
 
 function randomizer(tipo) {
     if (tipo==="res") {return ((Math.random()*100000+1))}
