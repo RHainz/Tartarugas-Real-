@@ -33,7 +33,7 @@ class Turtle {
         this.resistenciaTeste();
         this.rndNumber=randomizer("");
         //console.log(this.rndNumber);
-        let tiredvel=this.velocidade.x;
+        
         this.round++;
         
         //console.log(this.conditions.bestificada);
@@ -44,7 +44,7 @@ class Turtle {
                 sono ++;
                 start=0;
                 this.conditions.tired=false;
-                this.velocidade.x=tiredvel;
+                
             }
         }else{ 
         this.position.x +=this.velocidade.x+this.rndNumber;
@@ -207,5 +207,3 @@ class Sprite {
 //         foco: 99960
 //     }
 // });
-
-

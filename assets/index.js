@@ -14,7 +14,7 @@ let sono=0;
 let totalApostadoNow=[0,0,0,0,0];
 let betFeitos=[0,0,0,0,0];
 let gameAnimate=[0,0];
-let volta=false;
+thePlayer.goldPlayer=Number(localStorage.getItem("gold"));
 
 let positionLines={
     x:193,
@@ -54,7 +54,6 @@ function setZeroGold () {
     for (let i=0; i<5; i++){
         buttonOne[i].hidden=true;
     }
-    return
 }
 
 function updatePlayer() {
@@ -109,44 +108,44 @@ function totalDasApostas() {
 }
 
 function animarTartarugas() {
-    window.requestAnimationFrame(animarTartarugas);
+    window.requestAnimationFrame(animarTartarugas)
     c.fillStyle="black";
-    //playerBet(endBet);
     //c.fillRect(0,0,canvas.width,canvas.height);
     //attBackgroud("./images/Sandy.png", 161, 68);
-    if (endBet===false){playerBet();}else if(endBet===true){
+    if (stop){ return}
     drawingArena();
     updatePlayer();
+    //console.log(totalDasApostas());
+//    backGround.update();
     turtle1.update();
     turtle2.update();
     turtle3.update();
     turtle4.update();
-    turtle5.update();   
-    }
-    if (stop) {continueJogo();}
-
+    turtle5.update();
+    //turtle3.update();
 }
 
 function playerBet (){
+    window.requestAnimationFrame(playerBet);
+    //console.log(thePlayer.goldPlayer);
+    //console.log("nomanete");
+    if (endBet) { return }
+    //drawingArena();
     updatePlayer();
     somarGold();
-    if(endBet) {return pararGold()}
-    //drawingArena();
-    
 }
 
 function pararGold (){
     let buttonZero=document.querySelectorAll("#inputsGold input");
     for (let i=0; i<5; i++){
-            buttonZero[i].hidden=true;
-            
+        buttonZero[i].hidden=true;
     }
+
     let buttonOne=document.querySelectorAll("#betsGold button");
     for (let i=0; i<5; i++){
         buttonOne[i].hidden=false;
         buttonOne[i].textContent=buttonZero[i].value;
     }
-    return
 }
 
 function pagarGold() {
@@ -180,17 +179,16 @@ function endGame() {
 
 
 function continueJogo () {
-    volta=true;
     console.log(thePlayer.goldPlayer);
     c.fillStyle="black";
     c.fillRect(0, 0, canvas.width, canvas.height);
     console.log(turtle1.round);
     console.log(turtle2.round);
-    drawingArena();
     pagarGold();
     setZeroGold();
     updatePlayer();
     updateNameTurtle();
+    drawingArena();
     endGame();
     //attBackgroud("./images/eg-desert.png",0 ,0);
     
@@ -214,7 +212,6 @@ function continueJogo () {
     turtle5.position.x=194;
     turtle5.conditions.tired=false;
     turtle5.conditions.bestificada=false;
-    
 
     totalApostadoNow=[0,0,0,0,0];
     betFeitos=[0,0,0,0,0];
@@ -224,6 +221,9 @@ function continueJogo () {
     console.log(turtle2);
     console.log(thePlayer.goldPlayer);
     turtle1.round=0;
+    localStorage.setItem("gold",`${thePlayer.goldPlayer}`);
+    window.location.reload()
+    thePlayer.goldPlayer=Number(localStorage.getItem("gold"));
     return
 }
 
@@ -231,7 +231,8 @@ function continueJogo () {
 setZeroGold();
 updateNameTurtle();
 drawingArena();
-animarTartarugas();
+playerBet();
+//animarTartarugas();
 
 // const inputNotString = document.getElementsByClassName("notastring");
 // for (i=0; i<inputNotString.length; i++) {
@@ -250,15 +251,17 @@ starteando.addEventListener("click",()=>{
     starteando.disabled=true;
     endBet=true;
     stop=false;
-    });
+    pararGold();
+    animarTartarugas()});
 
 starteando2.addEventListener("click",()=>{
-        starteando2.hidden=true;
-        starteando2.disabled=true;
-        starteando.disabled=false;
-        endBet=false;
-        starteando.hidden=false;
-        });
+    starteando2.hidden=true;
+    starteando2.disabled=true;
+    starteando.disabled=false;
+    endBet=false;
+    starteando.hidden=false;
+    continueJogo();
+});
 
 // setZeroGold();
 // updateNameTurtle();
