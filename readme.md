@@ -30,17 +30,17 @@ Como jogar:
   
   
   *Nenhuma tartaruga foi machucada ou utilizada para fazer esse jogo. Qualquer relação com a realidade é apenas mera coincidência. Este é um jogo de terror.*
- .
- .
- .
- .
- .
- .
- .
- .
+  .
+  .
+  .
+  .
+  .
+  .
+  .
+  .
   Agradecimentos:
   
-  Ao Thor que possibilitou que quase pescou a serpente de Midgard.
+  Ao Thor que quase pescou a serpente de Midgard.
   Ao Rick do universo 361 que inventou esse universo.
   Ao Dom Corleone pela inspiração.
   
