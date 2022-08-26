@@ -37,7 +37,9 @@ Como jogar:
   
   *Nenhuma tartaruga foi machucada ou utilizada para fazer esse jogo. Qualquer relação com a realidade é apenas mera coincidência. Este é um jogo de terror.*
   
-   
+  ---------
+  ---------
+  
   Agradecimentos:
   
   Ao Thor que quase pescou a serpente de Midgard.
@@ -46,7 +48,7 @@ Como jogar:
   
   Ao projeto TAMAR - esse uma realidade e um trabalho incrível !
   
-  
+  ---------
   
   Agradeço à todos do bootcamp pelo apoio dado.
     
