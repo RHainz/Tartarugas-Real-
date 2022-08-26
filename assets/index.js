@@ -15,7 +15,10 @@ let totalApostadoNow=[0,0,0,0,0];
 let betFeitos=[0,0,0,0,0];
 let gameAnimate=[0,0];
 let endGameDef=false;
-
+let secret="";
+let danSecret=false;
+let vel=1;
+const secretAudio= new Audio("./audio/bcrack.mp3");
 
 let positionLines={
     x:193,
@@ -70,11 +73,9 @@ function somarGold (){
     
     for (let i=0; i<5; i++){
         if(buttonZero[i].valueAsNumber<0){buttonZero[i].valueAsNumber=0; buttonZero[i].value=0}
-        console.log(buttonZero[i].valueAsNumber);
     }
 
     for (let i=0; i<5; i++){
-        console.log(buttonZero[i].valueAsNumber);
         if(typeof thePlayer.goldPlayer.valueAsNumber !=="number"){ thePlayer.goldPlayer.valueAsNumber=1000}
         if(buttonZero[i].valueAsNumber!==totalApostadoNow[i]) {
             totalApostado+=(buttonZero[i].valueAsNumber-totalApostadoNow[i]);
@@ -106,6 +107,8 @@ function animarTartarugas() {
     turtle3.update();
     turtle4.update();
     turtle5.update();
+
+
 }
 
 function playerBet (){
@@ -211,8 +214,17 @@ function continueJogo () {
     if (endGameDef=false) {window.location.reload()}
     
     thePlayer.goldPlayer=Number(localStorage.getItem("gold"));
+
+    if (danSecret===true) {thePlayer.goldPlayer+=500;}
     
     return 
+}
+
+function randomizer(tipo) {
+    if (tipo==="res") {return ((Math.random()*100000+1))}
+    else {
+        return (Math.floor(Math.random()*100+1)/200*vel)
+    };
 }
 
 setZeroGold();
@@ -245,3 +257,63 @@ starteando2.addEventListener("click",()=>{
     starteando.hidden=false;
     continueJogo();
 });
+
+window.addEventListener("keypress", (event)=>{
+    secret+=event.key
+    if (secret.length>10){ 
+        secret=""
+        secretAudio.play()
+    };
+    if (secret=="caroline"){thePlayer.goldPlayer=9900
+        updatePlayer();
+        secret="";
+    }
+    if (secret=="igor"){turtle3.velocidade.x=3
+        secret="";}
+    if (secret=="maxwell"){turtle2.velocidade.x=3
+            secret="";}
+    if (secret=="armando"){turtle4.velocidade.x=3
+            secret="";}
+    if (secret=="zih") {turtle5.velocidade.x=3
+            secret=""}
+    if (secret=="alexandre") {turtles1.velocidade.x=3
+            secret=""}
+    if (secret=="daniel") {danSecret=true;
+            secret=""}
+    if (secret=="vinicius" || secret=="giuliana") { 
+        choose=Math.round(Math.random()*4);
+        console.log (choose);
+        switch(choose){
+            case 0:
+                turtle1.resistencia.stamina-=1000;
+            case 1:
+                turtle2.resistencia.stamina-=1000;
+            case 2:
+                turtle2.resistencia.stamina-=1000;
+            case 3:
+                turtle2.resistencia.stamina-=1000;
+            case 4:
+                turtle2.resistencia.stamina-=1000;
+            secret="";
+        }
+    }
+    if (secret=="lucas") {
+        vel=vel+5;
+        secret="";
+    }
+    if (secret=="larissa") {
+        thePlayer.goldPlayer=1000000;
+        secret="";
+        return continueJogo();
+    }
+    if (secret=="roger") {
+        thePlayer.goldPlayer-=1000000;
+        secret="";
+        return continueJogo();
+    }
+
+    console.log(thePlayer.goldPlayer);
+    console.log(secret);
+    return
+
+})

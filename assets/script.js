@@ -67,12 +67,12 @@ let thePlayer={
     tartarugaAtual: "Sem Tartaruga"    
 };
 
-function randomizer(tipo) {
-    if (tipo==="res") {return ((Math.random()*100000+1))}
-    else {
-        return (Math.floor(Math.random()*100+1)/200*5)
-    };
-}
+// function randomizer(tipo) {
+//     if (tipo==="res") {return ((Math.random()*100000+1))}
+//     else {
+//         return (Math.floor(Math.random()*100+1)/200*vel)
+//     };
+// }
 
 function drawingArena () {
     attBackgroud("./images/Sandy5.gif",0,70);
@@ -85,7 +85,7 @@ function drawingArena () {
 const allturtles=[  {position: {x:194,y:90}, velocidade: {x:0.003,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Ironruga"}, 
                     conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99950, foco: 99950}},
 
-                    {position: {x:194,y:138}, velocidade: {x:0.006,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Rogerinuga"}, 
+                    {position: {x:194,y:138}, velocidade: {x:0.006,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Rogerin uga"}, 
                     conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99960, foco: 99960}},
 
                     {position: {x:194,y:186}, velocidade: {x:0.009,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "DaVinte"}, 
@@ -94,7 +94,7 @@ const allturtles=[  {position: {x:194,y:90}, velocidade: {x:0.003,y:0}, rndNumbe
                     {position: {x:194,y:234}, velocidade: {x:0.007,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Yakiruga"}, 
                     conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99965, foco: 99960}},
                 
-                    {position: {x:194,y:282}, velocidade: {x:0.010,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Demonhuga"}, 
+                    {position: {x:194,y:282}, velocidade: {x:0.010,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Ziggyruga"}, 
                     conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99945, foco: 99960}}]
 
 
