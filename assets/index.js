@@ -16,10 +16,6 @@ let betFeitos=[0,0,0,0,0];
 let gameAnimate=[0,0];
 let endGameDef=false;
 
-//thePlayer.goldPlayer=Number(localStorage.getItem("gold"));
-// let firstRun=true;
-// if (firstRun==true){localStorage.removeItem("gold");}
-// if (firstRun==false){thePlayer.goldPlayer=Number(localStorage.getItem("gold"));}
 
 let positionLines={
     x:193,
@@ -177,7 +173,14 @@ function endGame() {
     console.log("ijaisjaisjiajsiaijsiaisjiasijaisj")
     if (thePlayer.goldPlayer>10000){
         document.getElementById("container").style.display="none";
+        document.getElementById("losediv").style.display="none";
         document.getElementById("windiv").style.display="flex";
+        endGameDef=true;    
+    }
+    if (thePlayer.goldPlayer<=0){
+        document.getElementById("container").style.display="none";
+        document.getElementById("windiv").style.display="none";
+        document.getElementById("losediv").style.display="flex";
         endGameDef=true;    
     }
     

@@ -72,7 +72,7 @@ class Turtle {
 
 let thePlayer={
     nomeJogador: "The Player",
-    goldPlayer: 9500,
+    goldPlayer: 1000,
     tartarugaAtual: "Sem Tartaruga"    
 };
     //localStorage.setItem("gold",`${thePlayer.goldPlayer}`);
