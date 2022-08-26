@@ -28,7 +28,7 @@ Como jogar:
   
                 // Roda melhor no Firefox. No Chrome está com mais bugs. Nos outros browsers, por conta e risco.
   
-  //.
+  //.....
   //.
   //.
   
