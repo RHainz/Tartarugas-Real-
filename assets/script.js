@@ -89,13 +89,13 @@ const allturtles=[  {position: {x:194,y:90}, velocidade: {x:0.003,y:0}, rndNumbe
                     conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99960, foco: 99960}},
 
                     {position: {x:194,y:186}, velocidade: {x:0.009,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "DaVinte"}, 
-                    conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99960, foco: 99960}},
+                    conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99955, foco: 99960}},
                 
                     {position: {x:194,y:234}, velocidade: {x:0.007,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Yakiruga"}, 
-                    conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99960, foco: 99960}},
+                    conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99965, foco: 99960}},
                 
                     {position: {x:194,y:282}, velocidade: {x:0.010,y:0}, rndNumber: {x:0,y:0}, nameTurtle: {nome: "Demonhuga"}, 
-                    conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99960, foco: 99960}}]
+                    conditions: {tired:false, bestificada: false}, resistencia: {stamina: 99945, foco: 99960}}]
 
 
 

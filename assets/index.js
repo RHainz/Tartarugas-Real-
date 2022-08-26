@@ -229,6 +229,7 @@ playerBet();
 starteando2.hidden=true;
 
 starteando.addEventListener("click",()=>{
+    
     starteando.hidden=true;
     starteando.disabled=true;
     endBet=true;
