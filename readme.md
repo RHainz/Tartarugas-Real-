@@ -30,22 +30,31 @@ Como jogar:
   
   
   *Nenhuma tartaruga foi machucada ou utilizada para fazer esse jogo. Qualquer relação com a realidade é apenas mera coincidência. Este é um jogo de terror.*
-  
-  
- 
- 
- 
- 
- 
- 
+ .
+ .
+ .
+ .
+ .
+ .
+ .
+ .
   Agradecimentos:
   
-  _Agradeço à todos do bootcamp pelo apoio dado. 
+  Ao Thor que possibilitou que quase pescou a serpente de Midgard.
+  Ao Rick do universo 361 que inventou esse universo.
+  Ao Dom Corleone pela inspiração.
+  
+  Ao projeto TAMAR - esse uma realidade e um trabalho incrível !
+  
+  
+  
+  Agradeço à todos do bootcamp pelo apoio dado.
+    
   Às contribuições com os bugs do mestre Ale e do TA do meu coração Daniel;
   Às risadas que demos em galera quando os jogos já estavam prontos e cheios de bugs:
        Igor, Max, Lucas, Armando, Zih, Carol, Lari, Pedro, Vinicius e Giuliana.
   
- _ 
+  
  
   E um especial agradecimento ao **Julião**, meu irmão desde sempre, que tornou possível fazer esse bootcamp.
   
