@@ -19,6 +19,16 @@ let secret="";
 let danSecret=false;
 let vel=1;
 const secretAudio= new Audio("./audio/bcrack.mp3");
+const secretAudioOk= new Audio("./audio/coins.mp3");
+const infernoAudio= new Audio("./audio/inferno.mp3");
+const voidAudio= new Audio("./audio/void.mp3");
+const void2Audio= new Audio("./audio/void2.mp3");
+const laughAudio= new Audio("./audio/laugh.mp3");
+const chariotAudio= new Audio("./audio/chariot.mp3");
+const crowdAudio= new Audio("./audio/crowd.mp3");
+
+
+
 
 let positionLines={
     x:193,
@@ -159,12 +169,16 @@ function endGame() {
         document.getElementById("container").style.display="none";
         document.getElementById("losediv").style.display="none";
         document.getElementById("windiv").style.display="flex";
+        infernoAudio.play();
         endGameDef=true;    
     }
     if (thePlayer.goldPlayer<=0){
         document.getElementById("container").style.display="none";
         document.getElementById("windiv").style.display="none";
         document.getElementById("losediv").style.display="flex";
+        void2Audio.play();
+        laughAudio.play();
+        voidAudio.play();
         endGameDef=true;    
     }
     
@@ -246,6 +260,7 @@ starteando.addEventListener("click",()=>{
     starteando.disabled=true;
     endBet=true;
     stop=false;
+    chariotAudio.play();
     pararGold();
     animarTartarugas()});
 
@@ -255,6 +270,7 @@ starteando2.addEventListener("click",()=>{
     starteando.disabled=false;
     endBet=false;
     starteando.hidden=false;
+    secretAudioOk.play();
     continueJogo();
 });
 
@@ -264,21 +280,21 @@ window.addEventListener("keypress", (event)=>{
         secret=""
         secretAudio.play()
     };
-    if (secret=="caroline"){thePlayer.goldPlayer=9900
+    if (secret=="caroline"){thePlayer.goldPlayer=9900;secretAudioOk.play();
         updatePlayer();
         secret="";
     }
-    if (secret=="igor"){turtle3.velocidade.x=3
+    if (secret=="igor"){turtle3.velocidade.x=3;secretAudioOk.play();
         secret="";}
-    if (secret=="maxwell"){turtle2.velocidade.x=3
+    if (secret=="maxwell"){turtle2.velocidade.x=3;secretAudioOk.play();
             secret="";}
-    if (secret=="armando"){turtle4.velocidade.x=3
+    if (secret=="armando"){turtle4.velocidade.x=3;secretAudioOk.play();
             secret="";}
-    if (secret=="zih") {turtle5.velocidade.x=3
+    if (secret=="zih") {turtle5.velocidade.x=3;secretAudioOk.play();
             secret=""}
-    if (secret=="alexandre") {turtles1.velocidade.x=3
+    if (secret=="alexandre") {turtles1.velocidade.x=3;secretAudioOk.play();
             secret=""}
-    if (secret=="daniel") {danSecret=true;
+    if (secret=="daniel") {danSecret=true; secretAudioOk.play();
             secret=""}
     if (secret=="vinicius" || secret=="giuliana") { 
         choose=Math.round(Math.random()*4);
@@ -295,25 +311,40 @@ window.addEventListener("keypress", (event)=>{
             case 4:
                 turtle2.resistencia.stamina-=1000;
             secret="";
+            secretAudioOk.play();
         }
     }
     if (secret=="lucas") {
         vel=vel+5;
         secret="";
+        secretAudioOk.play()
+    }
+    if (secret=="pedro") {
+        turtle1.velocidade.x+=.5;
+        turtle2.velocidade.x+=.5;
+        turtle3.velocidade.x+=.5;
+        turtle4.velocidade.x+=.5;
+        turtle5.velocidade.x+=.5;
+        secret="";
+        secretAudioOk.play();
     }
     if (secret=="larissa") {
         thePlayer.goldPlayer=1000000;
         secret="";
+        secretAudioOk.play()
         return continueJogo();
     }
     if (secret=="roger") {
         thePlayer.goldPlayer-=1000000;
         secret="";
+        secretAudioOk.play()
         return continueJogo();
     }
-
+    
     console.log(thePlayer.goldPlayer);
     console.log(secret);
+    
+
     return
 
 })

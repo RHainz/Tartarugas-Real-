@@ -47,6 +47,8 @@ class Turtle {
             starteando2.hidden=false;
             starteando2.disabled=false;
             this.position.x-=this.rndNumber;
+            chariotAudio.pause();
+            crowdAudio.play();
             return stop=true;
         }
     }
