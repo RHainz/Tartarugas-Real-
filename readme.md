@@ -12,12 +12,15 @@ Você junta tudo o que tem, troca por antigas moedas de outro que serão aceitas
 Como jogar:
 
   - Você possui uma quantidade inicial de Gold;
-  - Escolha quanto quer apostar nas tartarugas;                   // Há um BUG nesse ponto. Tente usar as setas e quando for digitar um valor, não use teclas que não 
-  - Clique em Start.                                              //sejam números.
+  - Escolha quanto quer apostar nas tartarugas;
+              
+                 // Há um BUG nesse ponto. Tente usar as setas e quando for digitar um valor, não use teclas que não sejam números.
+  
+  - Clique em Start;        
   - Ao terminar a corrida, clique em Continue;
   - Receba ou perca Gold;
   - Se ficar sem Gold, você perde;
-  - Se atingir 10.000 de Gold, você ganha.
+  - Se atingir 10.000 de Gold, você ganha;
 
   Divirta-se !!
   
