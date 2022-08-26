@@ -21,7 +21,7 @@ Como jogar:
 
   Divirta-se !!
   
-  Link do Jogo: https://rhainz.github.io/Tartarugas-Real-/;
+  Link do Jogo: https://rhainz.github.io/Tartarugas-Real-/;        // Roda melhor no Firefox. No Chrome está com mais bugs. Nos outros browsers, por conta e risco.
   
   
   *Nenhuma tartaruga foi machucada ou utilizada para fazer esse jogo. Qualquer relação com a realidade é apenas mera coincidência.*
