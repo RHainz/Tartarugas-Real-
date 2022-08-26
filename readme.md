@@ -43,8 +43,11 @@ Como jogar:
   Agradecimentos:
   
   Ao Thor que quase pescou a serpente de Midgard.
+  
   Ao Rick do universo 361 que inventou esse universo.
+  
   Ao Dom Corleone pela inspiração.
+  
   
   Ao projeto TAMAR - esse uma realidade e um trabalho incrível !
   
