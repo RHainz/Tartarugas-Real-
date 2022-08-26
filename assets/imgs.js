@@ -17,15 +17,3 @@ function attBackgroud(sourceImg,posX,posY) {
     
   }
 }
-
-// function attGif(sourceImg,posX,posY) {
-//   let myGif=GIF();
-//   let sourceImg2=sourceImg;
-//   let posX2=posX;
-//   let posY2=posY;
-  
-//   myGif.onload(sourceImg2);
-    
-//   c.drawImage(myGif.image, posX2, posY2)
-  
-// }

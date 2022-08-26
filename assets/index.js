@@ -26,18 +26,6 @@ let positionBackground={
     y:0
 }
 
-const backGround= new Sprite({
-    position: {
-        x:0,
-        y:0
-    }, 
-    imgSource: './images/largeturtle.png'
-});
-
-//attBackgroud("./images/Sandy2.png", 0, 0);
-//attBackgroud("./images/Sandy.jpg", 280, 68);
-
-
 c.fillRect(0, 0, canvas.width, canvas.height);
 
 
@@ -87,7 +75,6 @@ function somarGold (){
 
     for (let i=0; i<5; i++){
         console.log(buttonZero[i].valueAsNumber);
-        //console.log(totalApostadoNow[i]);
         if(typeof thePlayer.goldPlayer.valueAsNumber !=="number"){ thePlayer.goldPlayer.valueAsNumber=1000}
         if(buttonZero[i].valueAsNumber!==totalApostadoNow[i]) {
             totalApostado+=(buttonZero[i].valueAsNumber-totalApostadoNow[i]);
@@ -114,22 +101,16 @@ function animarTartarugas() {
     if (stop){ return }
     drawingArena();
     updatePlayer();
-    //console.log(totalDasApostas());
-//    backGround.update();
     turtle1.update();
     turtle2.update();
     turtle3.update();
     turtle4.update();
     turtle5.update();
-    //turtle3.update();
 }
 
 function playerBet (){
     window.requestAnimationFrame(playerBet);
-    //console.log(thePlayer.goldPlayer);
-    //console.log("nomanete");
     if (endBet) { return }
-    //drawingArena();
     updatePlayer();
     somarGold();
 }
@@ -188,21 +169,15 @@ function endGame() {
 
 
 function continueJogo () {
-    //console.log(thePlayer.goldPlayer);
     c.fillStyle="black";
     c.fillRect(0, 0, canvas.width, canvas.height);
-    //console.log(turtle1.round);
-    //console.log(turtle2.round);
-    //window.cancelAnimationFrame(requestAnimationFrame(animarTartarugas()))
     pagarGold();
     setZeroGold();
     updatePlayer();
     updateNameTurtle();
     drawingArena();
     endGame();
-    console.log("huahsuhaushuahushuahsuhuahsuhauhssssssssssssssssssssssssssssssu")
-    //attBackgroud("./images/eg-desert.png",0 ,0);
-    
+       
     turtle1.position.x=194;
     turtle1.conditions.tired=false;
     turtle1.conditions.bestificada=false;
@@ -228,26 +203,18 @@ function continueJogo () {
     betFeitos=[0,0,0,0,0];
 
     console.log(thePlayer.goldPlayer);
-    //if(thePlayer.goldPlayer =="NaN"){ localStorage.removeItem("gold"); thePlayer.goldPlayer=1000}
-
-    //console.log(turtle1);
-    //console.log(turtle2);
-    //console.log(thePlayer.goldPlayer);
-    
+        
     turtle1.round=0;
-    //firstRun=false;
-    //localStorage.setItem("run",`${firstRun=0}`)
+    
     localStorage.setItem("gold",`${thePlayer.goldPlayer}`);
     
     if (endGameDef=false) {window.location.reload()}
     
-    //firstRun=Number(localStorage.getItem("run"));
     thePlayer.goldPlayer=Number(localStorage.getItem("gold"));
     
     return 
 }
 
-//backGround.update();
 setZeroGold();
 updateNameTurtle();
 drawingArena();
@@ -258,17 +225,6 @@ turtle4.draw();
 turtle5.draw();
 
 playerBet();
-//animarTartarugas();
-
-// const inputNotString = document.getElementsByClassName("notastring");
-// for (i=0; i<inputNotString.length; i++) {
-//     inputNotString[i].addEventListener("keydown", (event)=> {
-//         const regex=new RegExp(/^[0-9]*$/gm);
-//         if (regex.test(event.target.value)){
-//             event.preventDefault;            
-//         }
-//     })
-// }
 
 starteando2.hidden=true;
 
@@ -288,78 +244,3 @@ starteando2.addEventListener("click",()=>{
     starteando.hidden=false;
     continueJogo();
 });
-
-// setZeroGold();
-// updateNameTurtle();
-// console.log(turtle1.positionX());
-// animarTartarugas();
-// function areaPrincipal (inicio) {
-//     while (starting===true){
-//         animarTartarugas();
-//     }
-// }
-
-// localizando=document.querySelectorAll("#inputsGold input")
-// localizando[0].value="0";
-
-
-
-// turtle1.velocidade.x=0.06;
-    // turtle1=new Turtle({
-    //     position: {
-    //         x:194,
-    //         y:108
-    //     },
-    //     velocidade: {
-    //         x:+0.003,
-    //         y:0
-    //     },
-    //     rndNumber: {
-    //         x:0,
-    //         y:0
-    //     },
-    //     nameTurtle: {
-    //         nome: "Rogeruga"
-    //     },
-    //     conditions: {
-    //         tired:false,
-    //         bestificada: false
-    //     },
-    //     resistencia: {
-    //         stamina: 99950,
-    //         foco: 4999
-    //     }
-    // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let i=0; 
-// for (let i=0; i<=4; i++) {
-//     const ajuste=i*48;
-//     console.log (ajuste*10000);
-//     c.fillStyle="yellow";
-//     c.fillRect(positionLines.x, positionLines.y+ajuste, pathSize, 48);
-//     c.fillStyle="black";
-//     c.fillRect(positionLines.x+1, positionLines.y+ajuste+1, pathSize-2, 46);
-// }
-
-// c.fillStyle="yellow"
-// let nomeJogador=c.fillRect(100,400,50,60);
-// c.fillText("Nome", 100,400,50,50);
-// let posXturtle1=turtle1.positionX()
-// c.fillText(`${(posXturtle1)}`,160,400,50,50);
