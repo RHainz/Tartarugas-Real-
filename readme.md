@@ -28,20 +28,20 @@ Como jogar:
   
                 // Roda melhor no Firefox. No Chrome está com mais bugs. Nos outros browsers, por conta e risco.
   
-  //
-  //
-  //
+  //.
+  //.
+  //.
   
   *Nenhuma tartaruga foi machucada ou utilizada para fazer esse jogo. Qualquer relação com a realidade é apenas mera coincidência. Este é um jogo de terror.*
   
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
+  //.
+  //.
+  //.
+  //.
+  //.
+  //.
+  //.
+  //.
   
   Agradecimentos:
   
